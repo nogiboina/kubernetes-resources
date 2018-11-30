@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet 
+metadata: 
+ name: nginx-deployment-dev
+spec:
+ replicas: 1
+ selector:
+  matchLabels:  
+   app: nginx-deployment-dev
+ template:
+  metadata: 
+   labels:
+    app: nginx-deployment-dev
+  spec:
+   containers:
+   - name: nginx-deployment-dev
+     image: nginx:1.8
+     ports:
+     - containerPort: 80
