@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: nogiboina/jenkins:2.6
+          image: nogiboina/jenkins:2.60.3
           env:
             - name: JAVA_OPTS
               value: -Djenkins.install.runSetupWizard=false
