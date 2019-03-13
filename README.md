@@ -24,6 +24,19 @@ List of general purpose commands for Kubernetes management:
 - [Pod Security Policies](#pod_security_policies)
 - [Network Policies](#network_policies)
 
+#Examples: Common operations
+#kubectl create
+# Create a service using the definition in example-service.yaml.
+kubectl create -f example-service.yaml
+
+# Create a replication controller using the definition in example-controller.yaml.
+kubectl create -f example-controller.yaml
+
+# Create the objects that are defined in any .yaml, .yml, or .json file within the <directory> directory.
+kubectl create -f <directory>
+
+
+
 ## VIM Setup for Yaml files
 
 Put the following lines in ~/.vimrc:
