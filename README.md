@@ -28,17 +28,35 @@ List of general purpose commands for Kubernetes management:
 
 ##kubectl create
 ```
-$Create a service using the definition in example-service.yaml.
+#Create a service using the definition in example-service.yaml.
 $kubectl create -f example-service.yaml
 
-$Create a replication controller using the definition in example-controller.yaml.
+#Create a replication controller using the definition in example-controller.yaml.
 $kubectl create -f example-controller.yaml
 
-$Create the objects that are defined in any .yaml, .yml, or .json file within the <directory> directory.
+#Create the objects that are defined in any .yaml, .yml, or .json file within the <directory> directory.
 $kubectl create -f <directory>
 ```
+##kubectl get - List one or more resources.
+```
+# List all pods in plain-text output format.
+$kubectl get pods
 
+# List all pods in plain-text output format and include additional information (such as node name).
+$kubectl get pods -o wide
 
+# List the replication controller with the specified name in plain-text output format. Tip: You can shorten and replace the 'replicationcontroller' resource type with the alias 'rc'.
+$kubectl get replicationcontroller <rc-name>
+
+# List all replication controllers and services together in plain-text output format.
+$kubectl get rc,services
+
+# List all daemon sets, including uninitialized ones, in plain-text output format.
+$kubectl get ds --include-uninitialized
+
+# List all pods running on node server01
+$kubectl get pods --field-selector=spec.nodeName=server01
+```
 ## VIM Setup for Yaml files
 
 Put the following lines in ~/.vimrc:
