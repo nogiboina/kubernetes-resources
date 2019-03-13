@@ -57,6 +57,21 @@ $kubectl get ds --include-uninitialized
 # List all pods running on node server01
 $kubectl get pods --field-selector=spec.nodeName=server01
 ```
+##kubectl describe - Display detailed state of one or more resources, including the uninitialized ones by default.
+```
+# Display the details of the node with name <node-name>.
+$kubectl describe nodes <node-name>
+
+# Display the details of the pod with name <pod-name>.
+$kubectl describe pods/<pod-name>
+
+# Display the details of all the pods that are managed by the replication controller named <rc-name>.
+# Remember: Any pods that are created by the replication controller get prefixed with the name of the replication controller.
+$kubectl describe pods <rc-name>
+```
+# Describe all pods, not including uninitialized ones
+$kubectl describe pods --include-uninitialized=false
+
 ## VIM Setup for Yaml files
 
 Put the following lines in ~/.vimrc:
