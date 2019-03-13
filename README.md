@@ -68,9 +68,27 @@ $kubectl describe pods/<pod-name>
 # Display the details of all the pods that are managed by the replication controller named <rc-name>.
 # Remember: Any pods that are created by the replication controller get prefixed with the name of the replication controller.
 $kubectl describe pods <rc-name>
-```
+
 # Describe all pods, not including uninitialized ones
 $kubectl describe pods --include-uninitialized=false
+
+```
+##kubectl delete - Delete resources either from a file, stdin, or specifying label selectors, names, resource selectors, or resources
+```
+# Delete a pod using the type and name specified in the pod.yaml file.
+$kubectl delete -f pod.yaml
+
+# Delete all the pods and services that have the label name=<label-name>.
+$kubectl delete pods,services -l name=<label-name>
+
+# Delete all the pods and services that have the label name=<label-name>, including uninitialized ones.
+$kubectl delete pods,services -l name=<label-name> --include-uninitialized
+
+# Delete all pods, including uninitialized ones.
+$kubectl delete pods --all
+```
+
+
 
 ## VIM Setup for Yaml files
 
